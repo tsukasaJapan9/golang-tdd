@@ -21,8 +21,15 @@ func TestRepeat(t *testing.T) {
 	})
 
 	t.Run("repeat char, input count is one", func(t *testing.T) {
-		got := Repeat("a", -1)
+		got := Repeat("a", 1)
 		want := "a"
+
+		assertMsg(t, got, want)
+	})
+
+	t.Run("repeat char, input count is zero", func(t *testing.T) {
+		got := Repeat("a", 0)
+		want := ""
 
 		assertMsg(t, got, want)
 	})
